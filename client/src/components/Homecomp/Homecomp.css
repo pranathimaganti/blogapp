@@ -1,0 +1,18 @@
+.heading{
+    text-align: center;
+    padding-top: 80px;
+    font-size: 60px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+.content{
+    text-align: center;
+    padding-left:100px;
+    padding-right:100px;
+    padding-top:50px;
+    font-size: 30px;
+    padding-bottom: 60px;
+}
+.image1{
+    padding-left: 700px;
+}

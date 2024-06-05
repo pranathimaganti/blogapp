@@ -1,0 +1,78 @@
+//author api req
+//author registration
+post http://localhost:4000/author-api/author
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"vikas",
+    "password":"vikas",
+    "email":"vikas@gmail.com"
+}
+
+//author login
+###
+post http://localhost:4000/author-api/login
+Content-Type: application/json
+
+{
+    "userType":"author",
+    "username":"vikas",
+    "password":"vikas"
+}
+###
+
+###
+post http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"{{$timestamp}}",
+    "title":"Fundamentals of Javascript",
+    "category":"programming",
+    "content":"JavaScript, often abbreviated as JS, is a programming language and core technology of the World Wide Web, alongside HTML and CSS. 99% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries. ",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"vikas",
+    "comments":[],
+    "status":true
+}
+
+//modify or update article by author
+###
+put http://localhost:4000/author-api/article
+Content-Type: application/json
+
+{
+    "articleId":"1710421020",
+    "title":"Fundamentals of Javascript",
+    "category":"programming",
+    "content":" JS is a programming language and core technology of the World Wide Web, alongside HTML and CSS. 99% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries. ",
+    "dateOfCreation":"2024-03-14T12:57:00.447Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"vikas",
+    "comments":[],
+    "status":true
+}
+
+//soft delete an article by article id
+###
+put http://localhost:4000/author-api/article/1710421020
+Content-Type: application/json
+
+{
+    "articleId":"1710421020",
+    "title":"Fundamentals of Javascript",
+    "category":"programming",
+    "content":" JS is a programming language and core technology of the World Wide Web, alongside HTML and CSS. 99% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries. ",
+    "dateOfCreation":"2024-03-14T12:57:00.447Z",
+    "dateOfModification":"{{$datetime iso8601}}",
+    "username":"vikas",
+    "comments":[],
+    "status":true
+}
+
+//view articles
+###
+get http://localhost:4000/author-api/articles/vikas
+

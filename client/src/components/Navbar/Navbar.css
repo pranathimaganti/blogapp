@@ -1,0 +1,22 @@
+.nav{
+    background-color:#543310 ;
+    font-size: 30px;
+    height: 100px;
+    align-items: center;
+    padding-right: 10px;
+    
+   
+}
+.nav-link{
+    color: white;
+    margin-right: 20px;
+}
+.logo-img{
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+    
+}
+.logo{
+     margin-right: 1500px;
+}

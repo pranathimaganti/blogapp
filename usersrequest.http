@@ -1,0 +1,40 @@
+//user api req
+//user registration
+post http://localhost:4000/user-api/user
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"pranathi",
+    "password":"pranathi",
+    "email":"pranathi@gmail.com"
+}
+
+//user login
+###
+post http://localhost:4000/user-api/login
+Content-Type: application/json
+
+{
+    "userType":"user",
+    "username":"ravi",
+    "password":"ravi"
+}
+
+//write comment
+###
+post http://localhost:4000/user-api/comment/1710421020
+Content-Type: application/json
+
+{
+    "username":"ravi",
+    "comment":"This is very useful article"
+}
+###
+get http://localhost:4000/user-api/articles
+
+###
+get http://localhost:4000/author-api/test-author
+
+###
+get http://localhost:4000/admin-api/test-admin
