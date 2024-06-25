@@ -1,65 +1,147 @@
-.formele{
-    padding-top: 100px;
-  }
-  form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+.parent{
+  background-color: #e17b34;
+}
+.note{
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px; 
+  background-color: #f1144f;
+  margin-top: 100px;
+  width:60rem;
+  margin-left: 500px; 
+  border-radius: 5%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.imageelement {
+  margin-right: 20px; 
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align children to the start of the cross axis (left) */
+}
+
+.titleform {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px; /* Space between title and info */
+  margin-left: 30px;
+  color: white;
+  text-align: center;
+}
+
+.info {
+  font-size: 2rem;
+  color: #0c0c0c;
+  text-align: center;
+  margin-left: 30px;
+}
+
+
+/* Styling for the image */
+.loginimage {
+  max-width: 100%;
+  height: 800px;
+  width: 800px; /* Set a width for better control */
   
-  form div {
-    margin-bottom: 15px;
-  }
+}
+
+/* Styling for the form container */
+.formele {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for the form */
+.loginform {
+  width: 100%;
+  max-width: 470px; /* Control maximum width */
+  padding: 40px; /* Add padding inside the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  background-color: #fbfbfb; /* White background */
+  height: 600px;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+  margin-bottom:30px;
+  margin-top: 30px;
+}
+
+/* Styling for form components */
+.comp {
+  margin-bottom: 15px; /* Space between form elements */
+}
+
+.signinbutton {
+  margin-top: 20px; /* Space above the button */
+  padding: 10px 20px; /* Button padding */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded button corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 25px;
+  margin-left: 10px;
+
+}
+
+/* Styling for radio inputs and labels */
+input[type="radio"] {
+  margin-right: 5px; /* Space between radio button and label */
+  margin-top: 30px;
+  margin-left: 40px;
   
-  /* Label styling */
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+}
+input[type="password"]{
+  border-radius: 8px;
+  background-image: url("https://w7.pngwing.com/pngs/469/644/png-transparent-computer-icons-password-login-user-privacy-miscellaneous-christianity-rectangle-thumbnail.png");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 40px 40px; /* Adjust the size as needed */
+  padding-left: 60px; /* Adjust padding to make space for the logo */
+  height: 50px; /* Adjust height if needed */
+  width: 380px; /* Adjust width if needed */
+  border: 1px solid #ccc; /* Add border styling */
+  font-size: 16px; /* Adjust font size */
+}
+
+.logintext{
+border-radius: 8px;
+background-image: url("https://static.vecteezy.com/system/resources/previews/005/005/788/original/user-icon-in-trendy-flat-style-isolated-on-grey-background-user-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-free-vector.jpg");
+background-repeat: no-repeat;
+background-position: 10px center;
+background-size: 40px 40px; /* Adjust the size as needed */
+padding-left: 60px; /* Adjust padding to make space for the logo */
+height: 50px; /* Adjust height if needed */
+width: 380px; /* Adjust width if needed */
+border: 1px solid #ccc; /* Add border styling */
+font-size: 16px; /* Adjust font size */
+}
+input[type="email"]{
+    border-radius: 8px;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/022/647/958/non_2x/email-icon-for-your-website-mobile-presentation-and-logo-design-free-vector.jpg");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 40px 40px; /* Adjust the size as needed */
+    padding-left: 60px; /* Adjust padding to make space for the logo */
+    height: 50px; /* Adjust height if needed */
+    width: 380px; /* Adjust width if needed */
+    border: 1px solid #ccc; /* Add border styling */
+    font-size: 16px; /* Adjust font size */
   }
-  
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="radio"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-  }
-  
-  input[type="radio"] {
-    width: auto;
-    margin-right: 10px;
-  }
-  
-  p {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 5px;
-  }
-  
-  button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
+
+
+label {
+  margin-right: 10px; 
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}

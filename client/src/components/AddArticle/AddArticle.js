@@ -17,7 +17,7 @@ function AddArticle() {
     //create axios with token
     const axioswithToken=axios.create({
         headers:{Authorization:`Bearer ${token}`}
-    })
+    });
 
     const postArticle = async (article) => {
         article.dateOfCreation = new Date();
@@ -38,14 +38,12 @@ function AddArticle() {
     };
 
     return (
-        
-        <div>
-            
-            <form onSubmit={handleSubmit(postArticle)}>
+        <div className='backimage'>
+            <form className="addnewform" onSubmit={handleSubmit(postArticle)}>
             <h2>Add New Article</h2>
                 <div className="form-group">
                     <label htmlFor="title">Title</label>
-                    <input type="text" id="title" {...register('title', { required: true })} />
+                    <input className="titlearea" type="text" id="title" {...register('title', { required: true })} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="category">Category</label>
@@ -57,13 +55,12 @@ function AddArticle() {
                 </div>
                 <div className="form-group">
                     <label htmlFor="context">context</label>
-                    <textarea id="context" rows="10" {...register('context', { required: true })}></textarea>
+                    <textarea id="content" rows="10" {...register('content', { required: true })}></textarea>
                 </div>
                 <button type="submit">Post Article</button>
             </form>
             {err && <p className="error-message">{err}</p>}
         </div>
-        
     );
 }
 

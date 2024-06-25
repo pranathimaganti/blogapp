@@ -24,7 +24,7 @@ const readArticleByArticleId=(articleObj)=>{
     getArticlesOfCurrentAuthor()
   },[])
   return (
-    <div>
+    <div className="backcol">
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-5">
         {articlesList.map((article)=>(
           <div className="col" key={article.articleId}>
@@ -32,7 +32,7 @@ const readArticleByArticleId=(articleObj)=>{
               <div className="card-body">
                 <h5 className="card-title">{article.title}</h5>
                 <p className="card-text">
-                  {article.context.substring(0,80)+"......"}
+                  {article.content.substring(0,80)+"......"}
                 </p>
                 <button className="custom-btn btn-4" onClick={()=>readArticleByArticleId(article)}>
                   <span>Read More</span>

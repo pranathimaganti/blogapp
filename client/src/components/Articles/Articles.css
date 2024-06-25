@@ -1,0 +1,81 @@
+/* Articles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.backcolour {
+    background: linear-gradient(to right, #95f32a, #f32e48); /* Gradient background */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.row {
+    margin: 0; /* Remove default Bootstrap margin */
+    justify-content: space-evenly; /* Evenly space columns */
+}
+
+.col-md-4 {
+    margin-bottom: 30px; /* Add space between rows */
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card-body {
+    padding: 20px;
+    flex: 1;
+}
+
+.card-title {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #640c0c;
+}
+
+.card-text {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    text-align: right;
+    font-size: 20px;
+}
+
+.custom-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+   
+}
+
+.custom-btn:hover {
+    background-color: #0056b3;
+}
+
+.custom-btn.btn-4 span {
+    display: block;
+    padding: 12px 24px;
+    border-radius: 4px;
+}

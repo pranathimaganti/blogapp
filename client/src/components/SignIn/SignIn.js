@@ -4,12 +4,13 @@ import './SignIn.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { userAuthorLoginThunk } from '../../redux/slices/userAuthorSlice';
 import { useNavigate } from 'react-router-dom';
+import image2 from '../../images/image2.png'; 
 
 function SignIn() {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  let { loginUserStatus, currentUser } = useSelector(state => state.userAuthorLoginReducer);
-  let navigate = useNavigate();
-  let dispatch = useDispatch();
+  const { loginUserStatus, currentUser } = useSelector(state => state.userAuthorLoginReducer);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -27,49 +28,60 @@ function SignIn() {
   }, [loginUserStatus, currentUser, navigate]);
 
   return (
-    <div className='formele'>
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div>
+      
+    <div className='container'>
+      <div className='imageelement'>
+      <div className='titleform'>Login to Read latest Articles!</div>
+      <div className='info'>Enter your credentials to unlock a world of insighful blogs</div>
+      </div>
+      <div className='formele'>
+        <form className='loginform' onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            {...register('username', { required: true })}
-          />
-          {errors.username && <p>Username is required</p>}
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            {...register('password', { required: true })}
-          />
-          {errors.password && <p>Password is required</p>}
-        </div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              value="user"
-              {...register('userType', { required: true })}
-              defaultChecked
+            <label>Login As:
+              <input
+                type="radio"
+                value="user"
+                {...register('userType', { required: true })}
+                defaultChecked
+              />
+              User
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="author"
+                {...register('userType', { required: true })}
+              />
+              Author
+            </label>
+            {errors.userType && <p>User type is required</p>}
+          </div>
+          <div>
+            <label htmlFor="username">Username:</label>
+            <input className='logintext'
+              type="text"
+              id="username"
+              {...register('username', { required: true })}
             />
-            User
-          </label>
-          <label>
+            {errors.username && <p>Username is required</p>}
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
             <input
-              type="radio"
-              value="author"
-              {...register('userType', { required: true })}
+              type="password"
+              id="password"
+              {...register('password', { required: true })}
             />
-            Author
-          </label>
-          {errors.userType && <p>User type is required</p>}
-        </div>
-        <button type="submit">Login</button>
-      </form>
+            {errors.password && <p>Password is required</p>}
+          </div>
+          
+          <button className="signinbutton" type="submit">Login</button>
+        </form>
+      </div>
     </div>
+    </div>
+
   );
 }
 

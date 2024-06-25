@@ -1,0 +1,5 @@
+.backcol {
+    background: linear-gradient(to right, #95f32a, #f32e48); /* Gradient background */
+    min-height: 100vh;
+    padding: 20px;
+}

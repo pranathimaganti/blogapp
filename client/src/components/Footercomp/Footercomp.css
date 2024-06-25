@@ -1,6 +1,6 @@
 /* src/components/Footer.css */
 .footer {
-    background-color:#543310 ;
+  background-color:#1a1f3c ;
     color: #fff;
     height: auto;
     width: 100%;
@@ -64,7 +64,7 @@
   }
   
   .footer-bottom {
-    background: #74512D;
+    background-color:#323d7c ;
     color: #fff;
     height: 50px;
     text-align: center;

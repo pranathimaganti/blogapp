@@ -24,11 +24,12 @@ Content-Type: application/json
 
 ###
 post http://localhost:4000/author-api/article
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpa2FzIiwiaWF0IjoxNzE3NTY4ODcyLCJleHAiOjE3MTc2NTUyNzJ9.vkB8vjbk0MUI2V4V0ugChpUeImW86lHJ61DB8JeoXCE
 Content-Type: application/json
 
 {
     "articleId":"{{$timestamp}}",
-    "title":"Fundamentals of Javascript",
+    "title":"Fundamentals of Javascript part 2",
     "category":"programming",
     "content":"JavaScript, often abbreviated as JS, is a programming language and core technology of the World Wide Web, alongside HTML and CSS. 99% of websites use JavaScript on the client side for webpage behavior, often incorporating third-party libraries. ",
     "dateOfCreation":"{{$datetime iso8601}}",
@@ -41,6 +42,7 @@ Content-Type: application/json
 //modify or update article by author
 ###
 put http://localhost:4000/author-api/article
+Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpa2FzIiwiaWF0IjoxNzE4NjkwODIwLCJleHAiOjE3MTg3NzcyMjB9.KOi5M-MFdBiuKB-MLB993SnRSbWknEaFW2-ilby5vxU
 Content-Type: application/json
 
 {

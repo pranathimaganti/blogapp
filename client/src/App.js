@@ -1,3 +1,6 @@
+
+
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { createBrowserRouter,Navigate,RouterProvider } from 'react-router-dom';
@@ -40,8 +43,8 @@ function App() {
             element:<Articles/>
           },
           {
-            path:"articles/:articleId",
-            element:<Articles/>
+            path:"article/:articleId",
+            element:<Article/>
           },
           {
             path:'',

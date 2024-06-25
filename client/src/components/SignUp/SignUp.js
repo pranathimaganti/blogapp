@@ -5,6 +5,7 @@ import './SignUp.css';
 import axios from 'axios'
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom'
+import image2 from '../../images/image2.png'; 
 
 function SignUp() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -33,60 +34,71 @@ function SignUp() {
   console.log(err)
 
   return (
-    <div className='formele'>
+    
+   
+    <div>
       
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-      {err.length!=0 && <p className='text-danger fs-3'>{err}</p> }
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          {...register('username', { required: true })}
-        />
-        {errors.username && <p>Username is required</p>}
+    <div className='containerclass'>
+      <div className='imageelement'>
+      <div className='titleform'>Register to Explore More!</div>
+      <div className='info'>To explore more about articles please register with your details</div>
       </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          {...register('password', { required: true })}
-        />
-        {errors.password && <p>Password is required</p>}
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          {...register('email', { required: true })}
-        />
-        {errors.email && <p>Email is required</p>}
-      </div>
-      <div>
-        <label>
+      <div className='formele'>
+        <form className='loginformofregister' onSubmit={handleSubmit(onSubmit)}>
+        <div>
+            <label>Register As:
+              <input
+                type="radio"
+                value="user"
+                {...register('userType', { required: true })}
+                defaultChecked
+              />
+              User
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="author"
+                {...register('userType', { required: true })}
+              />
+              Author
+            </label>
+            {errors.userType && <p>User type is required</p>}
+          </div>
+          <div>
+            <label htmlFor="username">Username:</label>
+            <input className='registertext'
+              type="text"
+              id="username"
+              {...register('username', { required: true })}
+            />
+            {errors.username && <p>Username is required</p>}
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              {...register('password', { required: true })}
+            />
+            {errors.password && <p>Password is required</p>}
+          </div>
+          <div>
+          <label htmlFor="email">Email:</label>
           <input
-            type="radio"
-            value="user"
-            {...register('userType', { required: true })}
-            defaultChecked
+            type="email"
+            id="email"
+             {...register('email', { required: true })}
           />
-          User
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="author"
-            {...register('userType', { required: true })}
-          />
-          Author
-        </label>
-        {errors.userType && <p>User type is required</p>}
+          {errors.password && <p>Password is required</p>} 
+        </div>
+          
+          <button className="signupbutton" type="submit">Register</button>
+        </form>
       </div>
-      <button type="submit">register</button>
-    </form>
     </div>
+    </div>
+
   );
 }
 

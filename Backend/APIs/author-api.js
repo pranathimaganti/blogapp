@@ -72,7 +72,7 @@ authorApp.get('/articles/:username',verifyToken,expressAsyncHandler(async(req,re
     //get authors username from url
     const authorName=req.params.username;
     //get all articles whose status is true
-    let articlesList=await articlescollection.find({status:true,username:authorName}).toArray()
+    let articlesList=await articlescollection.find({username:authorName}).toArray()
     //send res
     res.send({message:"articles",payload:articlesList})
 }))
@@ -96,20 +96,28 @@ authorApp.put('/article',verifyToken,expressAsyncHandler(async(req,res)=>{
     const modifiedArticle=req.body;
     //update by articleId
     let result=await articlescollection.updateOne({articleId:modifiedArticle.articleId},{$set:modifiedArticle})
-    console.log(result)
-    res.send({message:"article modified"})
+    let latestArticle=await articlescollection.findOne({articleId:modifiedArticle.articleId})
+    res.send({message:"article modified",article:latestArticle})
 }))
 
 //soft delete of an article by author
+//delete an article by article ID
 authorApp.put('/article/:articleId',verifyToken,expressAsyncHandler(async(req,res)=>{
     //get articleId from url
-    const articleIdFromUrl=req.params.articleId;
-    //get article
+    const artileIdFromUrl=(+req.params.articleId);
+    //get article 
     const articleToDelete=req.body;
-    //update status of article to false
-    await articlescollection.updateOne({articleId:articleIdFromUrl},{$set:{...articleToDelete,status:false}})
-    res.send({message:"Article removed"})
-    
+
+    if(articleToDelete.status===true){
+       let modifiedArt= await articlescollection.findOneAndUpdate({articleId:artileIdFromUrl},{$set:{...articleToDelete,status:false}},{returnDocument:"after"})
+       res.send({message:"article deleted",payload:modifiedArt.status})
+    }
+    if(articleToDelete.status===false){
+        let modifiedArt= await articlescollection.findOneAndUpdate({articleId:artileIdFromUrl},{$set:{...articleToDelete,status:true}},{returnDocument:"after"})
+        res.send({message:"article restored",payload:modifiedArt.status})
+    }
+   
+   
 }))
 
 //export userApp

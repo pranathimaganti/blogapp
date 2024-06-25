@@ -7,7 +7,7 @@ function RootLayout() {
   return (
     <div>
         <Navbar/>
-        <div style={{ minHeight: "100vh", backgroundColor: "#cdaf92" }}>
+        <div style={{ minHeight: "100vh" }}>
         <Outlet/>
         </div>
         <Footercomp/>
